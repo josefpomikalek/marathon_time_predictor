@@ -1,2 +1,3 @@
 .idea/
 ratios.py
+__pycache__/
