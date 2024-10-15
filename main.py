@@ -3,6 +3,7 @@ This app calculates your likely marathon performance based on your personal best
 """
 
 from tkinter import *
+from ratios import RATIO_10KM, RATIO_HALF_M
 
 window = Tk()
 window.title("Marathon Performance Predictor")
