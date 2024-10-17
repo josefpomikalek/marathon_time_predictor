@@ -10,7 +10,7 @@ window.title("Marathon Performance Predictor")
 window.config(padx=20, pady=20, height=300, width=600, background="moccasin")
 
 # 10 km PB Label
-personal_best_10km_label = Label(text="What is you personal best for 10 km run?", background="moccasin",
+personal_best_10km_label = Label(text="What is your personal best for 10 km run?", background="moccasin",
                                  font=("Arial", 9), anchor="w")
 personal_best_10km_label.grid(row=0, column=0, ipadx=10)
 
