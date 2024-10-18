@@ -17,6 +17,8 @@ personal_best_10km_label.grid(row=0, column=0, ipadx=10)
 # 10 km PB Entry
 personal_best_10km_entry = Entry(width=20)
 personal_best_10km_entry.grid(row=0, column=1, padx=20)
+personal_best_10km_entry.focus()
+personal_best_10km_entry.insert(0, "mm:ss")
 
 # 10 km PB Button
 calculate_from_10km_button = Button(text="Calculate max marathon time")
@@ -30,6 +32,7 @@ personal_best_halfmarathon_label.grid(row=2, column=0)
 # Halfmarathon PB Entry
 personal_best_halfmarathon_entry = Entry(width=20)
 personal_best_halfmarathon_entry.grid(row=2, column=1, padx=10)
+personal_best_halfmarathon_entry.insert(0, "h:mm:ss")
 
 # Halfmarathon PB Button
 calculate_from_halfmarathon_button = Button(text="Calculate max marathon time")
