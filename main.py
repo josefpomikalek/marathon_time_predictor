@@ -20,6 +20,7 @@ personal_best_10km_entry = Entry(width=20)
 personal_best_10km_entry.grid(row=0, column=1, padx=20)
 personal_best_10km_entry.focus()
 
+
 def pb_10km():
 
     minutes = int(personal_best_10km_entry.get()[:2])
