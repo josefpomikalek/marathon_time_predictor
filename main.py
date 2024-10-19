@@ -19,6 +19,7 @@ personal_best_10km_label.grid(row=0, column=0, ipadx=10)
 personal_best_10km_entry = Entry(width=20)
 personal_best_10km_entry.grid(row=0, column=1, padx=20)
 personal_best_10km_entry.focus()
+<<<<<<< HEAD
 
 
 def pb_10km():
@@ -39,6 +40,8 @@ def pb_10km():
     time = f"{hours}:{mins}:{sec3}"
     print(time)
 
+=======
+>>>>>>> 5eaf890fe52770d2d51faeeef0cde82cd94ec490
 
 # 10 km PB Button
 calculate_from_10km_button = Button(text="Calculate max marathon time", command=pb_10km)
