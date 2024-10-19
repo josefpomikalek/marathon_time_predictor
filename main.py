@@ -4,6 +4,7 @@ This app calculates your likely maximal marathon performance based on your perso
 
 from tkinter import *
 from ratios import RATIO_10KM, RATIO_HALF_M
+from math import ceil
 
 window = Tk()
 window.title("Marathon Performance Predictor")
@@ -18,10 +19,9 @@ personal_best_10km_label.grid(row=0, column=0, ipadx=10)
 personal_best_10km_entry = Entry(width=20)
 personal_best_10km_entry.grid(row=0, column=1, padx=20)
 personal_best_10km_entry.focus()
-personal_best_10km_entry.insert(0, "mm:ss")
 
 # 10 km PB Button
-calculate_from_10km_button = Button(text="Calculate max marathon time")
+calculate_from_10km_button = Button(text="Calculate max marathon time", command=pb_10km)
 calculate_from_10km_button.grid(row=0, column=2, ipadx=8, ipady=2, padx=20, pady=10)
 
 # Halfmarathon PB Label
