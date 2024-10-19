@@ -33,8 +33,10 @@ def pb_10km():
     print(marathon_in_seconds)
     hours = marathon_in_seconds // 3600
     sec = marathon_in_seconds - (hours * 3600)
-    mins = sec //60
+    mins = sec // 60
     sec3 = sec - (mins * 60)
+    if len(str(mins)) == 1:
+        mins = "0" + str(mins)
     print(hours)
     print(sec)
     print(mins)
