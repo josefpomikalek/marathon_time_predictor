@@ -35,16 +35,16 @@ def pb_10km():
     hours = marathon_in_seconds // 3600
     sec = marathon_in_seconds - (hours * 3600)
     mins = sec // 60
-    sec3 = sec - (mins * 60)
-    if len(str(sec3)) == 1:
-        sec3 = "0" + str(sec3)
+    secs = sec - (mins * 60)
+    if len(str(secs)) == 1:
+        secs = "0" + str(secs)
     if len(str(mins)) == 1:
         mins = "0" + str(mins)
     print(hours)
     print(sec)
     print(mins)
-    print(sec3)
-    marathon_time_10km = f"{hours}:{mins}:{sec3}"
+    print(secs)
+    marathon_time_10km = f"{hours}:{mins}:{secs}"
     print(marathon_time_10km)
     marathon_time_based_on_10km_label = Label(text=f"Your maximal marathon time based on your 10 km PB is {marathon_time_10km} h.",
                                               background="moccasin", font=("Arial", 12))
@@ -63,7 +63,7 @@ personal_best_halfmarathon_label.grid(row=2, column=0)
 # Halfmarathon PB Entry
 personal_best_halfmarathon_entry = Entry(width=20)
 personal_best_halfmarathon_entry.grid(row=2, column=1, padx=10)
-personal_best_halfmarathon_entry.insert(0, "h:mm:ss")
+
 
 # Halfmarathon PB Button
 calculate_from_halfmarathon_button = Button(text="Calculate max marathon time")
