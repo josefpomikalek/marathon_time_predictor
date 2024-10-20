@@ -8,7 +8,8 @@ from math import ceil
 
 window = Tk()
 window.title("Marathon Performance Predictor")
-window.config(padx=20, pady=20, height=300, width=600, background="moccasin")
+window.geometry("670x200")
+window.config(padx=20, pady=20, background="moccasin")
 
 # 10 km PB Label
 personal_best_10km_label = Label(text="What is your personal best for 10 km run?", background="moccasin",
