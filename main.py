@@ -17,8 +17,8 @@ initial_label = Label(text="This app calculates your best marathon time, which y
 initial_label.grid(row=0, column=0, columnspan=3)
 
 # 10 km PB Label
-personal_best_10km_label = Label(text="What is your personal best for 10 km run?", background="moccasin",
-                                 font=("Arial", 9), anchor="w")
+personal_best_10km_label = Label(text="What is your personal best for 10 km run? Enter your time in format mm:ss", background="moccasin",
+                                 font=("Arial", 10), anchor="w")
 personal_best_10km_label.grid(row=1, column=0, ipadx=10)
 
 # 10 km PB Entry
