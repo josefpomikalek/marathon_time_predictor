@@ -11,14 +11,19 @@ window.title("Marathon Performance Predictor")
 window.geometry("670x200")
 window.config(padx=20, pady=20, background="moccasin")
 
+# Information Label
+initial_label = Label(text="This app calculates your best marathon time, which you are able to achieve according to your "
+                         "PB's for 10 km and/or halfmarathon.", background="moccasin", font=("Arial", 11))
+initial_label.grid(row=0, column=0, columnspan=3)
+
 # 10 km PB Label
 personal_best_10km_label = Label(text="What is your personal best for 10 km run?", background="moccasin",
                                  font=("Arial", 9), anchor="w")
-personal_best_10km_label.grid(row=0, column=0, ipadx=10)
+personal_best_10km_label.grid(row=1, column=0, ipadx=10)
 
 # 10 km PB Entry
 personal_best_10km_entry = Entry(width=20)
-personal_best_10km_entry.grid(row=0, column=1, padx=20)
+personal_best_10km_entry.grid(row=1, column=1, padx=20)
 personal_best_10km_entry.focus()
 
 marathon_time_10km = ""
@@ -53,7 +58,7 @@ def pb_10km():
 
 # 10 km PB Button
 calculate_from_10km_button = Button(text="Calculate max marathon time", command=pb_10km)
-calculate_from_10km_button.grid(row=0, column=2, ipadx=8, ipady=2, padx=20, pady=10)
+calculate_from_10km_button.grid(row=1, column=2, ipadx=8, ipady=2, padx=20, pady=10)
 
 # Halfmarathon PB Label
 personal_best_halfmarathon_label = Label(text="What is your personal best for halfmarathon?", background="moccasin",
