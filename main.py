@@ -17,7 +17,7 @@ initial_label = Label(text="This app calculates your best marathon time, which y
 initial_label.grid(row=0, column=0, columnspan=3)
 
 # 10 km PB Label
-personal_best_10km_label = Label(text="What is your personal best for 10 km run? Enter your time in format mm:ss", background="moccasin",
+personal_best_10km_label = Label(text="What is your personal best for 10 km run? Enter your time in format: mm:ss", background="moccasin",
                                  font=("Arial", 10), anchor="w")
 personal_best_10km_label.grid(row=1, column=0, ipadx=10)
 
@@ -61,7 +61,7 @@ calculate_from_10km_button = Button(text="Calculate max marathon time", command=
 calculate_from_10km_button.grid(row=1, column=2, ipadx=8, ipady=2, padx=20, pady=10)
 
 # Halfmarathon PB Label
-personal_best_halfmarathon_label = Label(text="What is your personal best for halfmarathon?", background="moccasin",
+personal_best_halfmarathon_label = Label(text="What is your personal best for halfmarathon? Enter your time in format: h:mm:ss", background="moccasin",
                                          font=("Arial", 9))
 personal_best_halfmarathon_label.grid(row=2, column=0)
 
