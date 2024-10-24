@@ -27,7 +27,7 @@ personal_best_10km_entry.grid(row=1, column=1, padx=20)
 personal_best_10km_entry.focus()
 
 marathon_time_based_on_10km = ""
-
+marathon_time_based_on_halfm = ""
 
 def pb_10km():
 
