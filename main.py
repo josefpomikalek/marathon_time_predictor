@@ -62,7 +62,7 @@ calculate_from_10km_button.grid(row=1, column=2, ipadx=8, ipady=2, padx=20, pady
 
 # Halfmarathon PB Label
 personal_best_halfmarathon_label = Label(text="What is your personal best for halfmarathon? Enter your time in format: h:mm:ss", background="moccasin",
-                                         font=("Arial", 9))
+                                         font=("Arial", 10))
 personal_best_halfmarathon_label.grid(row=2, column=0)
 
 # Halfmarathon PB Entry
