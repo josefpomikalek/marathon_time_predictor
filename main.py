@@ -26,12 +26,12 @@ personal_best_10km_entry = Entry(width=20)
 personal_best_10km_entry.grid(row=1, column=1, padx=20)
 personal_best_10km_entry.focus()
 
-marathon_time_10km = ""
+marathon_time_based_on_10km = ""
 
 
 def pb_10km():
 
-    global marathon_time_10km
+    global marathon_time_based_on_10km
     minutes = int(personal_best_10km_entry.get()[:2])
     seconds = int(personal_best_10km_entry.get()[3:])
     time_10km_in_seconds = minutes * 60 + seconds
@@ -49,9 +49,9 @@ def pb_10km():
     print(sec)
     print(mins)
     print(secs)
-    marathon_time_10km = f"{hours}:{mins}:{secs}"
-    print(marathon_time_10km)
-    marathon_time_based_on_10km_label = Label(text=f"Your maximal marathon time based on your 10 km PB is {marathon_time_10km} h.",
+    marathon_time_based_on_10km = f"{hours}:{mins}:{secs}"
+    print(marathon_time_based_on_10km)
+    marathon_time_based_on_10km_label = Label(text=f"Your maximal marathon time based on your 10 km PB is {marathon_time_based_on_10km} h.",
                                               background="moccasin", font=("Arial", 12))
     marathon_time_based_on_10km_label.grid(row=3, column=0, columnspan=3, ipady=20, sticky=W)
 
