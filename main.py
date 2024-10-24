@@ -8,7 +8,7 @@ from math import ceil
 
 window = Tk()
 window.title("Marathon Performance Predictor")
-window.geometry("670x200")
+window.geometry("895x240")
 window.config(padx=20, pady=20, background="moccasin")
 
 # Information Label
