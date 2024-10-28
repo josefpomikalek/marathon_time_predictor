@@ -29,12 +29,12 @@ personal_best_halfmarathon_label = Label(text="What is your personal best for ha
 personal_best_halfmarathon_label.grid(row=2, column=0)
 
 # 10 km PB Entry
-personal_best_10km_entry = Entry(width=20)
+personal_best_10km_entry = Entry(width=10)
 personal_best_10km_entry.grid(row=1, column=1, padx=20)
 personal_best_10km_entry.focus()
 
 # Halfmarathon PB Entry
-personal_best_halfmarathon_entry = Entry(width=20)
+personal_best_halfmarathon_entry = Entry(width=10)
 personal_best_halfmarathon_entry.grid(row=2, column=1, padx=10)
 
 marathon_time_based_on_10km = ""
