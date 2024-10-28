@@ -23,10 +23,19 @@ personal_best_10km_label = Label(text="What is your personal best for 10 km run?
                                  font=("Arial", 10), anchor="w")
 personal_best_10km_label.grid(row=1, column=0, ipadx=10)
 
+# Halfmarathon PB Label
+personal_best_halfmarathon_label = Label(text="What is your personal best for halfmarathon? Enter your time in format: h:mm:ss", background="moccasin",
+                                         font=("Arial", 10))
+personal_best_halfmarathon_label.grid(row=2, column=0)
+
 # 10 km PB Entry
 personal_best_10km_entry = Entry(width=20)
 personal_best_10km_entry.grid(row=1, column=1, padx=20)
 personal_best_10km_entry.focus()
+
+# Halfmarathon PB Entry
+personal_best_halfmarathon_entry = Entry(width=20)
+personal_best_halfmarathon_entry.grid(row=2, column=1, padx=10)
 
 marathon_time_based_on_10km = ""
 marathon_time_based_on_halfm = ""
@@ -35,76 +44,78 @@ marathon_time_based_on_halfm = ""
 def pb_10km():
 
     global marathon_time_based_on_10km
-    global marathon_time_based_on_halfm
-    if personal_best_10km_entry == "":
-        minutes = int(personal_best_10km_entry.get()[:2])
-        seconds = int(personal_best_10km_entry.get()[3:])
-        time_10km_in_seconds = minutes * 60 + seconds
-        marathon_in_seconds = ceil(time_10km_in_seconds * RATIO_10KM)
-        print(marathon_in_seconds)
-        hours = marathon_in_seconds // 3600
-        sec = marathon_in_seconds - (hours * 3600)
-        mins = sec // 60
-        secs = sec - (mins * 60)
-        if len(str(secs)) == 1:
-            secs = "0" + str(secs)
-        if len(str(mins)) == 1:
-            mins = "0" + str(mins)
-        print(hours)
-        # print(sec)
-        print(mins)
-        print(secs)
-        marathon_time_based_on_10km = f"{hours}:{mins}:{secs}"
-        print(marathon_time_based_on_10km)
-        marathon_time_based_on_10km_label = Label(text=f"Your maximal marathon time based on your 10 km PB is {marathon_time_based_on_10km} h.",
-                                                  background="moccasin", font=("Arial", 12))
-        marathon_time_based_on_10km_label.grid(row=3, column=0, columnspan=3, ipady=20, sticky=W)
-    else:
-        hours = int(personal_best_halfmarathon_entry.get()[:1])
-        print(hours)
-        minutes = int(personal_best_halfmarathon_entry.get()[2] + personal_best_halfmarathon_entry.get()[3])
-        print(minutes)
-        seconds = int(personal_best_halfmarathon_entry.get()[5:])
-        print(seconds)
+    minutes = int(personal_best_10km_entry.get()[:2])
+    seconds = int(personal_best_10km_entry.get()[3:])
+    time_10km_in_seconds = minutes * 60 + seconds
+    marathon_in_seconds = ceil(time_10km_in_seconds * RATIO_10KM)
+    print(marathon_in_seconds)
+    hours = marathon_in_seconds // 3600
 
-        time_halfm_in_seconds = hours * 3600 + minutes * 60 + seconds
-        marathon_in_seconds = ceil(time_halfm_in_seconds * RATIO_HALF_M)
-        print(time_halfm_in_seconds)
-        print(marathon_in_seconds)
-        hours = marathon_in_seconds // 3600
-        sec = marathon_in_seconds - (hours * 3600)
-        mins = sec // 60
-        secs = sec - (mins * 60)
-        if len(str(secs)) == 1:
-            secs = "0" + str(secs)
-        if len(str(mins)) == 1:
-            mins = "0" + str(mins)
-        print(hours)
-        # print(sec)
-        print(mins)
-        print(secs)
-        marathon_time_based_on_halfm = f"{hours}:{mins}:{secs}"
-        print(marathon_time_based_on_halfm)
-        marathon_time_based_on_halfm_label = Label(text=f"Your maximal marathon time based on your halfmarathon PB is {marathon_time_based_on_halfm} h.",
-                                                   background="moccasin", font=("Arial", 12))
-        marathon_time_based_on_halfm_label.grid(row=4, column=0, columnspan=3, sticky=W)
+    sec = marathon_in_seconds - (hours * 3600)
+    mins = sec // 60
+    secs = sec - (mins * 60)
+    if len(str(secs)) == 1:
+        secs = "0" + str(secs)
+    if len(str(mins)) == 1:
+        mins = "0" + str(mins)
+    print(hours)
+    # print(sec)
+    print(mins)
+    print(secs)
+    marathon_time_based_on_10km = f"{hours}:{mins}:{secs}"
+    print(marathon_time_based_on_10km)
+    marathon_time_based_on_10km_label = Label(
+        text=f"Your maximal marathon time based on your 10 km PB is {marathon_time_based_on_10km} h.",
+        background="moccasin", font=("Arial", 12))
+    marathon_time_based_on_10km_label.grid(row=3, column=0, columnspan=3, ipady=20, sticky=W)
+
+
+def pb_halfm():
+
+    global marathon_time_based_on_halfm
+    hours = int(personal_best_halfmarathon_entry.get()[:1])
+    print(hours)
+    minutes = int(personal_best_halfmarathon_entry.get()[2] + personal_best_halfmarathon_entry.get()[3])
+    print(minutes)
+    seconds = int(personal_best_halfmarathon_entry.get()[5:])
+    print(seconds)
+
+    time_halfm_in_seconds = hours * 3600 + minutes * 60 + seconds
+    marathon_in_seconds = ceil(time_halfm_in_seconds * RATIO_HALF_M)
+    print(time_halfm_in_seconds)
+    print(marathon_in_seconds)
+    hours = marathon_in_seconds // 3600
+    sec = marathon_in_seconds - (hours * 3600)
+    mins = sec // 60
+    secs = sec - (mins * 60)
+    if len(str(secs)) == 1:
+        secs = "0" + str(secs)
+    if len(str(mins)) == 1:
+        mins = "0" + str(mins)
+    print(hours)
+    # print(sec)
+    print(mins)
+    print(secs)
+    marathon_time_based_on_halfm = f"{hours}:{mins}:{secs}"
+    print(marathon_time_based_on_halfm)
+    marathon_time_based_on_halfm_label = Label(
+        text=f"Your maximal marathon time based on your halfmarathon PB is {marathon_time_based_on_halfm} h.",
+        background="moccasin", font=("Arial", 12))
+    marathon_time_based_on_halfm_label.grid(row=4, column=0, columnspan=3, sticky=W)
+
+
+
 
 # 10 km PB Button
 calculate_from_10km_button = Button(text="Calculate max marathon time", command=pb_10km)
 calculate_from_10km_button.grid(row=1, column=2, ipadx=8, ipady=2, padx=20, pady=10)
 
-# Halfmarathon PB Label
-personal_best_halfmarathon_label = Label(text="What is your personal best for halfmarathon? Enter your time in format: h:mm:ss", background="moccasin",
-                                         font=("Arial", 10))
-personal_best_halfmarathon_label.grid(row=2, column=0)
 
-# Halfmarathon PB Entry
-personal_best_halfmarathon_entry = Entry(width=20)
-personal_best_halfmarathon_entry.grid(row=2, column=1, padx=10)
+
 
 
 # Halfmarathon PB Button
-calculate_from_halfmarathon_button = Button(text="Calculate max marathon time", command=pb_10km)
+calculate_from_halfmarathon_button = Button(text="Calculate max marathon time", command=pb_halfm)
 calculate_from_halfmarathon_button.grid(row=2, column=2, ipadx=8, ipady=2)
 
 # Marathon time Labels
