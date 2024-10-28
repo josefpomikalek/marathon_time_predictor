@@ -48,7 +48,6 @@ def pb_10km():
     seconds = int(personal_best_10km_entry.get()[3:])
     time_10km_in_seconds = minutes * 60 + seconds
     marathon_in_seconds = ceil(time_10km_in_seconds * RATIO_10KM)
-    print(marathon_in_seconds)
     hours = marathon_in_seconds // 3600
 
     sec = marathon_in_seconds - (hours * 3600)
@@ -58,10 +57,6 @@ def pb_10km():
         secs = "0" + str(secs)
     if len(str(mins)) == 1:
         mins = "0" + str(mins)
-    print(hours)
-    # print(sec)
-    print(mins)
-    print(secs)
     marathon_time_based_on_10km = f"{hours}:{mins}:{secs}"
     print(marathon_time_based_on_10km)
     marathon_time_based_on_10km_label = Label(
@@ -74,16 +69,11 @@ def pb_halfm():
 
     global marathon_time_based_on_halfm
     hours = int(personal_best_halfmarathon_entry.get()[:1])
-    print(hours)
     minutes = int(personal_best_halfmarathon_entry.get()[2] + personal_best_halfmarathon_entry.get()[3])
-    print(minutes)
     seconds = int(personal_best_halfmarathon_entry.get()[5:])
-    print(seconds)
 
     time_halfm_in_seconds = hours * 3600 + minutes * 60 + seconds
     marathon_in_seconds = ceil(time_halfm_in_seconds * RATIO_HALF_M)
-    print(time_halfm_in_seconds)
-    print(marathon_in_seconds)
     hours = marathon_in_seconds // 3600
     sec = marathon_in_seconds - (hours * 3600)
     mins = sec // 60
@@ -92,10 +82,6 @@ def pb_halfm():
         secs = "0" + str(secs)
     if len(str(mins)) == 1:
         mins = "0" + str(mins)
-    print(hours)
-    # print(sec)
-    print(mins)
-    print(secs)
     marathon_time_based_on_halfm = f"{hours}:{mins}:{secs}"
     print(marathon_time_based_on_halfm)
     marathon_time_based_on_halfm_label = Label(
@@ -104,25 +90,13 @@ def pb_halfm():
     marathon_time_based_on_halfm_label.grid(row=4, column=0, columnspan=3, sticky=W)
 
 
-
-
 # 10 km PB Button
 calculate_from_10km_button = Button(text="Calculate max marathon time", command=pb_10km)
 calculate_from_10km_button.grid(row=1, column=2, ipadx=8, ipady=2, padx=20, pady=10)
 
-
-
-
-
 # Halfmarathon PB Button
 calculate_from_halfmarathon_button = Button(text="Calculate max marathon time", command=pb_halfm)
 calculate_from_halfmarathon_button.grid(row=2, column=2, ipadx=8, ipady=2)
-
-# Marathon time Labels
-
-
-
-
 
 
 
