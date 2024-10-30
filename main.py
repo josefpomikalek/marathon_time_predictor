@@ -1,5 +1,6 @@
 """
 This app calculates your likely maximal marathon performance based on your personal best over a shorter course.
+You can enter your best 10 km time and/or you best halfmarathon time.
 """
 
 from tkinter import *
